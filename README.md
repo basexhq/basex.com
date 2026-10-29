@@ -1,11 +1,13 @@
 # basex.com
 
-Static page hosted on GitHub pages
+BaseX homepage: **We measure value.** Price discovery for impact.
 
-Demo: https://beta.basex.com/
-Wiki: https://wiki.basex.com/
+A single static page (`index.html`, no build step) hosted on GitHub Pages behind Cloudflare.
 
-# Using web template Eventually by HTML5 UP
+- Live demo: https://demo.basex.com/ (repo: basexhq/basex-demo)
+- Whitepaper: https://basex.com/whitepaper.pdf
+- Contact: info@basex.com
 
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Part of [Planetary Council](https://planetarycouncil.org/). Dispute resolution by [Independent Tribunal](https://independenttribunal.org/).
+
+`OLD/` keeps an earlier version of the site for reference.

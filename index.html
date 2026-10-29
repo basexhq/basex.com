@@ -1,116 +1,558 @@
-<!DOCTYPE HTML>
-<!--
-	Eventually by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>BaseX - new definition of value</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BaseX: We measure value</title>
+<meta name="description" content="BaseX is price discovery for impact. Anyone can file an impact claim, independent evaluators price it with sealed estimates, and every number stays open to challenge. Positive and negative value, past and future.">
+<link rel="canonical" href="https://basex.com/">
+<link rel="icon" href="favicon.ico">
 
-		<meta property="og:title" content="BaseX - new definition of value"/>
-		<meta property="og:image" content="https://basex.com/preview.png"/>
-		<meta property="og:site_name" content="BaseX - new definition of value"/>
-		<meta property="og:description" content="Triple bottom line. People. Planet. Prosperity. Beyond GDP. Architecting a New World. Operating System for the Planet(s)"/>
-	
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@basexHQ">
-		<meta name="twitter:creator" content="@marsXrobertson">
-		<meta name="twitter:title" content="BaseX - new definition of value">
-		<meta name="twitter:description" content="Triple bottom line. People. Planet. Prosperity. Beyond GDP. Architecting a New World. Operating System for the Planet(s)">
-		<meta name="twitter:image" content="https://basex.com/preview.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://basex.com/">
+<meta property="og:site_name" content="BaseX">
+<meta property="og:title" content="BaseX: We measure value">
+<meta property="og:description" content="Price discovery for impact. Independent evaluators, sealed estimates, robust consensus, and every number open to challenge.">
+<meta property="og:image" content="https://basex.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@basexHQ">
+<meta name="twitter:creator" content="@marsXrobertson">
+<meta name="twitter:title" content="BaseX: We measure value">
+<meta name="twitter:description" content="Price discovery for impact. Independent evaluators, sealed estimates, robust consensus, and every number open to challenge.">
+<meta name="twitter:image" content="https://basex.com/og.png">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"BaseX","url":"https://basex.com","logo":"https://basex.com/images/BaseX-logo.png","email":"info@basex.com","slogan":"We measure value","sameAs":["https://x.com/basexHQ","https://github.com/basexhq","https://demo.basex.com"],"parentOrganization":{"@type":"Organization","name":"Planetary Council","url":"https://planetarycouncil.org"}}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
 <style>
-	p.header {
-		font-size: 1.6em !important;
-		font-weight: bold !important;
-	}
+:root{
+  --ink:#0D1424; --ink-2:#334055; --muted:#667085; --line:#E4E7EE; --line-2:#D0D5DD;
+  --bg:#FFFFFF; --soft:#F6F7FB; --navy:#060B3A;
+  --blue:#1430FF; --blue-deep:#0A1AA8; --blue-tint:#EEF1FF;
+  --green:#12854A; --green-tint:#E8F6EE; --clay:#B4410E; --clay-tint:#FCEEE6;
+  --amber:#B45309;
+  --r:14px; --max:1160px; --gut:clamp(16px,4vw,40px);
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:500}
+h1,h2,h3{letter-spacing:-.022em;line-height:1.12}
+h2{font-size:clamp(30px,4vw,44px);font-weight:800;margin:14px 0 16px}
+.lede{font-size:clamp(17px,1.6vw,19.5px);color:var(--ink-2);max-width:640px}
+section{padding:clamp(72px,9vw,120px) 0}
+.center{text-align:center}.center .lede{margin:0 auto}
 
-	.videoWrapper {
-		position:relative;
-		padding-bottom:56.25%;
-		padding-top:30px;
-		height:0;
-		overflow:hidden;
-	}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15.5px;padding:13px 22px;border-radius:10px;border:1px solid transparent;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 18px rgba(20,48,255,.28)}
+.btn-primary:hover{background:var(--blue-deep)}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--ink-2)}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-outline-light{color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-outline-light:hover{border-color:#fff}
 
-	.videoWrapper iframe, .videoWrapper object, .videoWrapper embed {
-		position:absolute;
-		top:0;
-		left:0;
-		width:100%;
-		height:100%;
-	}
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(12px);-webkit-backdrop-filter:saturate(1.6) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.nav img{height:30px;width:auto}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:15px}
+.nav-links a{color:var(--ink-2);font-weight:500}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-links .btn{padding:9px 16px;font-size:14.5px;color:#fff}
+@media (max-width:860px){.nav-links a:not(.btn){display:none}}
+
+/* hero */
+.hero{padding:clamp(48px,7vw,96px) 0 clamp(64px,8vw,104px);background:
+  radial-gradient(900px 480px at 85% 10%,rgba(20,48,255,.07),transparent 65%),
+  radial-gradient(700px 420px at 5% 90%,rgba(18,133,74,.06),transparent 65%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:var(--ink-2);background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px 6px 8px}
+.pill b{background:var(--green-tint);color:var(--green);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:99px}
+.hero h1{font-size:clamp(46px,7vw,84px);font-weight:800;letter-spacing:-.04em;margin:22px 0 20px}
+.hero h1 span{color:var(--blue)}
+.hero .lede{margin-bottom:32px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font-size:14px;color:var(--muted)}
+.facts span::before{content:"✓";color:var(--green);font-weight:700;margin-right:7px}
+
+/* product card */
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 1px 2px rgba(16,24,40,.04),0 24px 60px -24px rgba(16,24,40,.22)}
+.claim{padding:22px 22px 18px}
+.claim-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:6px;font-weight:500;white-space:nowrap}
+.tag-sky{background:var(--blue-tint);color:var(--blue-deep)}
+.tag-green{background:var(--green-tint);color:var(--green)}
+.tag-clay{background:var(--clay-tint);color:var(--clay)}
+.claim-org{font-size:13px;color:var(--muted);font-weight:500}
+.claim-text{font-size:15.5px;font-weight:600;line-height:1.45;margin-bottom:18px}
+.range-head{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.04em;margin-bottom:6px}
+.ev{display:grid;grid-template-columns:96px 1fr;align-items:center;gap:10px;font-size:12.5px;color:var(--ink-2);height:22px}
+.track{position:relative;height:8px;background:var(--soft);border-radius:99px}
+.bar{position:absolute;top:0;height:8px;border-radius:99px;background:#9AA8FF}
+.ev.trim{color:#A0A7B4}
+.ev.trim .bar{background:repeating-linear-gradient(45deg,#D7DBE3 0 4px,#EEF0F4 4px 8px)}
+.ev .who{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev.trim .who{text-decoration:line-through}
+.cons{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line-2);display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:center}
+.cons .who{font-size:12.5px;font-weight:700;color:var(--blue-deep)}
+.cons .bar{background:var(--blue);height:10px;top:-1px;box-shadow:0 0 0 4px rgba(20,48,255,.12)}
+.cons-val{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px}
+.cons-val strong{font-size:22px;letter-spacing:-.02em}
+.cons-val small{font-size:12.5px;color:var(--muted)}
+.harm{margin-top:14px;border-top:1px solid var(--line);padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13.5px;color:var(--ink-2);background:#FFFBF8;border-radius:0 0 18px 18px}
+.harm strong{color:var(--clay);white-space:nowrap}
+.card-note{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
+
+/* ecosystem band */
+.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);padding:22px 0}
+.band .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;font-size:14.5px;color:var(--muted)}
+.band a{color:var(--ink);font-weight:600}
+.band .sep{color:var(--line-2)}
+
+/* problem stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:52px}
+.stat{padding:26px 24px;border:1px solid var(--line);border-radius:var(--r);background:#fff;display:flex;flex-direction:column}
+.stat .num{font-size:clamp(30px,3.2vw,40px);font-weight:800;letter-spacing:-.03em;color:var(--blue)}
+.stat .num small{font-size:.5em;color:var(--ink-2);font-weight:700;margin-left:2px}
+.stat p{font-size:15px;color:var(--ink-2);margin:10px 0 16px;flex:1}
+.stat cite{font-style:normal;font-size:12.5px;color:var(--muted)}
+.stat cite a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.punch{margin-top:44px;font-size:clamp(19px,2vw,23px);font-weight:600;letter-spacing:-.01em;max-width:780px}
+.punch span{color:var(--blue)}
+
+/* how it works */
+.how{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.how::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 400px at 90% 0%,rgba(20,48,255,.45),transparent 60%),radial-gradient(600px 400px at 0% 100%,rgba(18,133,74,.22),transparent 60%)}
+.how .wrap{position:relative}
+.how .eyebrow{color:#8FA0FF}
+.how .lede{color:#C4CAE0}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:56px;counter-reset:s}
+.step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:24px 20px}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--mono);font-size:13px;color:#8FA0FF;display:block;margin-bottom:22px}
+.step h3{font-size:19px;margin-bottom:8px}
+.step p{font-size:14.5px;color:#C4CAE0;line-height:1.55}
+
+/* features */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+.feat{padding:28px 26px;border:1px solid var(--line);border-radius:var(--r);transition:border-color .2s,box-shadow .2s}
+.feat:hover{border-color:var(--line-2);box-shadow:0 12px 32px -18px rgba(16,24,40,.25)}
+.ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--blue-tint);color:var(--blue);margin-bottom:18px}
+.ico svg{width:22px;height:22px}
+.feat h3{font-size:18.5px;margin-bottom:8px}
+.feat p{font-size:15px;color:var(--ink-2)}
+
+/* audiences */
+.soft{background:var(--soft)}
+.aud{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:52px}
+.aud .feat{background:#fff;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.aud .ico{margin:0}
+.aud .feat .q{font-size:13.5px;color:var(--muted);margin-top:10px;font-style:italic}
+
+/* AI */
+.ai .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center}
+.loop{position:relative;aspect-ratio:1;max-width:440px;margin:0 auto;width:100%}
+.loop svg{width:100%;height:auto}
+.ai ul{list-style:none;margin-top:24px;display:grid;gap:14px}
+.ai li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:16px;color:var(--ink-2)}
+.ai li b{color:var(--ink)}
+.ai li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--blue);margin:9px 0 0 6px}
+.note{display:inline-block;margin-top:22px;font-size:13.5px;color:var(--muted);border-left:3px solid var(--line-2);padding-left:12px}
+
+/* founder */
+.founder .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,64px);align-items:center}
+blockquote.pull{font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.3;margin:18px 0 20px}
+blockquote.pull::before{content:"“";color:var(--blue);display:block;font-size:64px;line-height:.6;margin-bottom:6px}
+.attrib{font-size:14.5px;color:var(--muted)}
+.attrib b{color:var(--ink)}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.creds span{font-size:13px;font-weight:500;border:1px solid var(--line);background:#fff;padding:6px 12px;border-radius:99px;color:var(--ink-2)}
+.tweet{min-height:200px}
+.tweet .twitter-tweet{margin:0 auto!important}
+.tweet blockquote.twitter-tweet{border:1px solid var(--line);border-radius:var(--r);padding:22px;font-size:15px;color:var(--ink-2);background:#fff}
+
+/* roadmap */
+.road{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+.col{border:1px solid var(--line);border-radius:var(--r);padding:26px;background:#fff}
+.col h3{font-size:14px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.col h3::before{content:"";width:9px;height:9px;border-radius:50%}
+.col.now h3{color:var(--green)}.col.now h3::before{background:var(--green);box-shadow:0 0 0 4px var(--green-tint)}
+.col.next h3{color:var(--blue)}.col.next h3::before{background:var(--blue);box-shadow:0 0 0 4px var(--blue-tint)}
+.col.later h3{color:var(--muted)}.col.later h3::before{background:var(--line-2)}
+.col ul{list-style:none;display:grid;gap:11px}
+.col li{font-size:15px;color:var(--ink-2);padding-left:18px;position:relative}
+.col li::before{content:"–";position:absolute;left:0;color:var(--muted)}
+
+/* CTA */
+.cta{background:var(--navy);color:#fff;border-radius:24px;padding:clamp(40px,6vw,72px);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% 0%,rgba(20,48,255,.55),transparent 70%)}
+.cta>*{position:relative}
+.cta h2{color:#fff}
+.cta p{color:#C4CAE0;max-width:600px;margin:0 auto 30px;font-size:18px}
+.cta .cta-row{justify-content:center}
+.cta .mail{margin:22px auto 0;font-size:14.5px;color:#C4CAE0}
+.cta .mail a{color:#fff;font-weight:600}
+
+/* footer */
+footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:clamp(72px,9vw,120px)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.foot img{height:28px;width:auto;margin-bottom:14px}
+.foot p{font-size:14px;color:var(--muted);max-width:300px}
+.foot h4{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px;font-weight:600}
+.foot ul{list-style:none;display:grid;gap:9px;font-size:14.5px}
+.foot ul a{color:var(--ink-2)}
+.legal{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:13px;color:var(--muted)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:1020px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .steps .step:last-child{grid-column:1/-1}
+  .grid3{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .hero .wrap,.ai .wrap,.founder .wrap{grid-template-columns:1fr}
+  .aud,.road{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .stats,.steps,.grid3{grid-template-columns:1fr}
+  .ev,.cons{grid-template-columns:78px 1fr}
+  .claim{padding:18px 16px 16px}.harm{padding:12px 16px}
+  .foot{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+  .nav-links .btn{width:auto}
+}
 </style>
+</head>
+<body>
 
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="/" aria-label="BaseX home"><img src="images/basex-logo-640.png" alt="BaseX" width="92" height="30"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#trust">Why BaseX</a>
+      <a href="#who">Who it's for</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="whitepaper.pdf">Whitepaper</a>
+      <a class="btn btn-primary" href="https://demo.basex.com/">Live demo</a>
+    </nav>
+  </div>
+</header>
 
-	</head>
-	<body class="is-preload">
+<main>
 
-		<div id="everything">
-			<header id="header">
-				<img src="images/BaseX-logo.png" height="80" alt="BaseX logo">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="pill"><b>Live</b> Clickable demo at demo.basex.com</span>
+      <h1>We measure <span>value.</span></h1>
+      <p class="lede">BaseX is price discovery for impact. Anyone can file an impact claim, independent evaluators price it with sealed estimates, and every number stays open to challenge. We count positive and negative value, both past and future.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://demo.basex.com/">Try the live demo →</a>
+        <a class="btn btn-ghost" href="mailto:info@basex.com?subject=BaseX%20founding%20partner">Become a founding partner</a>
+      </div>
+      <div class="facts">
+        <span>Built in the open</span>
+        <span>Harms count too</span>
+        <span>Every number challengeable</span>
+      </div>
+    </div>
 
-				<br>
-				<br>
+    <div>
+      <div class="card" role="figure" aria-label="Example claim priced by five independent evaluators">
+        <div class="claim">
+          <div class="claim-top">
+            <span class="claim-org">Basalt Commons · carbon removal</span>
+            <span class="tag tag-sky">Forecast · 2032</span>
+          </div>
+          <p class="claim-text">Enhanced rock weathering will remove 1 Mt of CO₂ a year by 2032 across 400,000 ha of partner farmland.</p>
+          <div class="range-head"><span>5 independent estimates · striped = trimmed</span><span>$0 — $150M / yr</span></div>
+          <div class="ev"><span class="who">Evaluator A</span><div class="track"><i class="bar" style="left:20%;width:40%"></i></div></div>
+          <div class="ev trim"><span class="who">Evaluator B</span><div class="track"><i class="bar" style="left:33.3%;width:60%"></i></div></div>
+          <div class="ev trim"><span class="who">Evaluator C</span><div class="track"><i class="bar" style="left:13.3%;width:33.3%"></i></div></div>
+          <div class="ev"><span class="who">Evaluator D</span><div class="track"><i class="bar" style="left:26.7%;width:53.3%"></i></div></div>
+          <div class="ev"><span class="who">Evaluator E</span><div class="track"><i class="bar" style="left:30%;width:56.7%"></i></div></div>
+          <div class="cons"><span class="who">Consensus</span><div class="track"><i class="bar" style="left:26.7%;width:50%"></i></div></div>
+          <div class="cons-val"><strong>$40M – $115M <span style="font-size:14px;color:var(--muted);font-weight:600">/ yr</span></strong><span class="tag tag-green">Consensus reached</span></div>
+        </div>
+        <div class="harm">
+          <span>Counter-claim: quarrying &amp; trucking emissions, dust exposure</span>
+          <strong>−$10M to −$30M</strong>
+        </div>
+      </div>
+      <p class="card-note">Sample data from the <a href="https://demo.basex.com/">live demo</a>. The highest and lowest estimates are trimmed.</p>
+    </div>
+  </div>
+</section>
 
+<!-- ECOSYSTEM -->
+<div class="band">
+  <div class="wrap">
+    <span>Part of <a href="https://planetarycouncil.org/">Planetary Council</a></span>
+    <span class="sep" aria-hidden="true">/</span>
+    <span>Dispute resolution by <a href="https://independenttribunal.org/">Independent Tribunal</a></span>
+    <span class="sep" aria-hidden="true">/</span>
+    <span>Built in the open on <a href="https://github.com/basexhq">GitHub</a></span>
+  </div>
+</div>
 
-				<p class="header">SpaceX: making life multiplanetary</p>
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="eyebrow rv">The problem</div>
+    <h2 class="rv">Markets price what they can see.<br>Most value is invisible.</h2>
+    <p class="lede rv">Clean air, healthy soil and living ecosystems are worth trillions, yet they show up nowhere on a balance sheet. Pollution and harm are left off too. When value can't be measured, it can't be funded, rewarded or held to account.</p>
+    <div class="stats">
+      <div class="stat rv">
+        <div class="num">3.6%</div>
+        <p>Timber's share of the £351.4bn asset value of UK woodlands. Recreation's health benefits alone were 17.8%.</p>
+        <cite><a href="https://www.ons.gov.uk/economy/environmentalaccounts/bulletins/woodlandnaturalcapitalaccountsuk/2022">UK Office for National Statistics</a></cite>
+      </div>
+      <div class="stat rv">
+        <div class="num">$2M<small>+</small></div>
+        <p>Value of the average great whale's services. That is over $1 trillion for the current stock of great whales.</p>
+        <cite><a href="https://www.imf.org/Publications/fandd/issues/2019/12/natures-solution-to-climate-change-chami">IMF, Finance &amp; Development</a></cite>
+      </div>
+      <div class="stat rv">
+        <div class="num">$1.75M</div>
+        <p>Value of the services each African forest elephant provides, against about $40,000 for its ivory.</p>
+        <cite><a href="https://www.imf.org/Publications/fandd/issues/2020/09/how-african-elephants-fight-climate-change-ralph-chami">IMF, Finance &amp; Development</a></cite>
+      </div>
+      <div class="stat rv">
+        <div class="num">$3B<small>/yr</small></div>
+        <p>Saved for US agriculture every year by bats eating crop pests. No bat sends an invoice.</p>
+        <cite><a href="https://www.fws.gov/story/bats-are-one-most-important-misunderstood-animals">US Fish &amp; Wildlife Service</a></cite>
+      </div>
+    </div>
+    <p class="punch rv">Carbon credits cover a sliver of this, and they are slow, expensive and closed to the <span>84% of the world's 570 million farms</span> that are smallholdings. BaseX prices everything else.</p>
+  </div>
+</section>
 
-				<p class="header">BaseX: making life multiplanetary, starting from the Earth</p>
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="eyebrow rv">How it works</div>
+    <h2 class="rv">From claim to consensus,<br>in the open.</h2>
+    <p class="lede rv">One pipeline turns scattered evidence into a price that people can trust, challenge and act on.</p>
+    <div class="steps">
+      <div class="step rv"><h3>File</h3><p>Anyone files a claim about impact, good or bad, with evidence in any format. Duplicates are caught automatically.</p></div>
+      <div class="step rv"><h3>Evaluate</h3><p>Independent evaluators submit a low, most-likely and high value. Estimates stay sealed so nobody can copy the crowd.</p></div>
+      <div class="step rv"><h3>Converge</h3><p>After five or more evaluations and a one-week cooling period, the extremes are trimmed and the rest form the consensus.</p></div>
+      <div class="step rv"><h3>Challenge</h3><p>Any claim or evaluation can be disputed. Disputes go to Independent Tribunal and the whole history stays public.</p></div>
+      <div class="step rv"><h3>Settle</h3><p>Forecasts are checked against measured outcomes when their window closes, and accurate evaluators build reputation.</p></div>
+    </div>
+  </div>
+</section>
 
-				<ul>
-					<li><a href="whitepaper.pdf">whitepaper.pdf</a> with original vision</li>
-					<li><a href="https://wiki.secondrenaissance.net/wiki/Mars_Robertson">Mars's wiki</a></li>
-					<li><a href="https://planetarycouncil.org/">Planetary Council</a></li>
-					<li>The domain <code>BaseX.com</code> is an asset that might be available <strong>FOR SALE</strong> 💰 💰 💰 <i>(asking price is $20k)</i></li>
-					<li>Contact <a href="mailto:marsXRobertson@gmail.com">marsXRobertson@gmail.com</a> or book a call: <a href="https://calendly.com/marsxr/basex">calendly.com/marsxr/basex</a> ☎️</li>
-				</ul>
+<!-- TRUST -->
+<section id="trust">
+  <div class="wrap">
+    <div class="eyebrow rv">Why BaseX</div>
+    <h2 class="rv">Trust through visible,<br>challengeable work.</h2>
+    <p class="lede rv">Impact reporting today is mostly self-assessment and PR. BaseX is built so that no single party, including us, decides what something is worth.</p>
+    <div class="grid3">
+      <div class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>Permissionless</h3><p>There are no gatekeepers and no in-house assessors to train. Anyone can file a claim and anyone can evaluate it, so it scales with the crowd rather than with headcount.</p></div>
+      <div class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Sealed estimates</h3><p>Evaluations are committed before others are revealed. Herding and anchoring are designed out, so every estimate is independent.</p></div>
+      <div class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h16M7 14V9M12 14V5M17 14v-3"/></svg></div><h3>Robust consensus</h3><p>The highest and lowest estimates are trimmed and the rest are weighted by confidence. One bad actor can't move the price.</p></div>
+      <div class="feat rv"><div class="ico" style="background:var(--clay-tint);color:var(--clay)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 10l7-7 7 7"/><path d="M5 14l7 7 7-7" opacity=".45"/></svg></div><h3>Harms count too</h3><p>Negative value is first-class. It gives you a full ledger of assets and liabilities instead of a highlight reel, which is the opposite of greenwashing.</p></div>
+      <div class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Everything challengeable</h3><p>Every claim, evaluation and dispute is append-only and public. Nothing is deleted quietly, and disagreement is published, not hidden.</p></div>
+      <div class="feat rv"><div class="ico" style="background:var(--green-tint);color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Past and future</h3><p>BaseX prices value that has already happened and value still to come. Forecasts settle against real outcomes, so early-stage moonshots get a price before any market will pay for them.</p></div>
+    </div>
+  </div>
+</section>
 
-				<!--
-				BaseX on hold. Work continues: <a href="https://impactevaluation.foundation">Impact Evaluation Foundation</a>
+<!-- AUDIENCES -->
+<section class="soft" id="who">
+  <div class="wrap">
+    <div class="eyebrow rv">Who it's for</div>
+    <h2 class="rv">One number everyone can read.</h2>
+    <p class="lede rv">Everything converges to a single, comparable dollar range, honest about its own uncertainty.</p>
+    <div class="aud">
+      <div class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></div><div><h3>Funders &amp; philanthropy</h3><p>Compare grants across cause areas with one currency of impact, and fund retroactively against outcomes that were priced in public.</p></div></div>
+      <div class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div><div><h3>Companies &amp; ESG</h3><p>Turn sustainability claims into numbers that have been independently priced and can be challenged. The credibility comes from scrutiny, not marketing.</p></div></div>
+      <div class="feat rv"><div class="ico" style="background:var(--green-tint);color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8z"/><path d="M12 15c0-4 3-7 8-7 0 4-3 7-8 7z"/></svg></div><div><h3>Regenerative producers</h3><p>Farmers, co-ops and community projects get paid for value the market ignores, with no consultants and no five-figure certification fees.</p></div></div>
+      <div class="feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><div><h3>Impact investors &amp; public goods</h3><p>Price forecasts and moonshots before a market exists, then follow the price as evidence comes in. Designed to plug into Gitcoin, Karma GAP and Hypercerts.</p></div></div>
+    </div>
+  </div>
+</section>
 
-				<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Very aligned, pretty much the same, powerful ideas: <a href="https://t.co/WBxpAFwji5">https://t.co/WBxpAFwji5</a><br><br>Starting from impact evaluator job... This can empower entire economies.<br><br>BaseX ON HOLD. Impact Evaluation Foundation is 🌱</p>&mdash; BaseX 🌱 #ReFi #ImpactEvaluation ➡️ @ImpactEvalFDN (@basexHQ) <a href="https://twitter.com/basexHQ/status/1791467541035897110?ref_src=twsrc%5Etfw">May 17, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- AI -->
+<section class="ai" id="ai">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rv">Human consensus, AI scale</div>
+      <h2 class="rv">A data flywheel for the value of everything.</h2>
+      <p class="lede rv">Every consensus is a labelled, challengeable data point about what something is worth to the world. That is exactly the ground truth AI needs and doesn't have.</p>
+      <ul class="rv">
+        <li><span><b>AI structures the input:</b> messy reports, photos and spreadsheets become clean claims.</span></li>
+        <li><span><b>AI suggests estimates</b> and people price, challenge and correct them.</span></li>
+        <li><span><b>Human consensus is the baseline:</b> it steers the models and scores every evaluator, human or AI.</span></li>
+        <li><span><b>The more it's used, the sharper it gets:</b> better reputation means better consensus and better data.</span></li>
+      </ul>
+      <span class="note rv">Claim structuring is in progress. AI-suggested estimates are designed but not yet built.</span>
+    </div>
+    <div class="loop rv" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1430FF"/></marker></defs>
+        <circle cx="200" cy="200" r="138" fill="none" stroke="#E4E7EE" stroke-width="2"/>
+        <path d="M200 62 A138 138 0 0 1 338 200" fill="none" stroke="#1430FF" stroke-width="2.5" marker-end="url(#ah)"/>
+        <path d="M338 200 A138 138 0 0 1 200 338" fill="none" stroke="#1430FF" stroke-width="2.5" marker-end="url(#ah)"/>
+        <path d="M200 338 A138 138 0 0 1 62 200" fill="none" stroke="#1430FF" stroke-width="2.5" marker-end="url(#ah)"/>
+        <path d="M62 200 A138 138 0 0 1 200 62" fill="none" stroke="#1430FF" stroke-width="2.5" marker-end="url(#ah)"/>
+        <circle cx="200" cy="200" r="64" fill="#060B3A"/>
+        <text x="200" y="195" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-weight="700" font-size="17">Consensus</text>
+        <text x="200" y="216" text-anchor="middle" fill="#8FA0FF" font-family="Inter,sans-serif" font-size="12.5">ground truth</text>
+        <g font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#0D1424" text-anchor="middle">
+          <rect x="140" y="40" width="120" height="44" rx="10" fill="#fff" stroke="#D0D5DD"/><text x="200" y="67">Claims</text>
+          <rect x="290" y="178" width="100" height="44" rx="10" fill="#fff" stroke="#D0D5DD"/><text x="340" y="205">AI drafts</text>
+          <rect x="130" y="316" width="140" height="44" rx="10" fill="#fff" stroke="#D0D5DD"/><text x="200" y="343">People price</text>
+          <rect x="6" y="178" width="112" height="44" rx="10" fill="#EEF1FF" stroke="#1430FF"/><text x="62" y="205" fill="#0A1AA8">Reputation</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
 
-				<p>Climate change is not going anywhere. The problem of accounting for externalities <i>(full cost of the product)</i> remains unsolved. We are here to stay but after many <i>(too many)</i> setbacks the project is currently on hold...</p>
+<!-- FOUNDER -->
+<section class="soft founder" id="team">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rv">Why now, why us</div>
+      <blockquote class="pull rv">What is the biggest threshold point to fix climate change? It's the full cost accounting, tracking the end-to-end impact of every single product and goods.</blockquote>
+      <p class="attrib rv"><b>Mars Robertson</b>, founder of BaseX, interviewed by We Don't Have Time at Davos, January 2024</p>
+      <div class="creds rv">
+        <span>COP23 Bonn</span><span>COP24 Katowice</span><span>COP26 Glasgow</span><span>Davos 2022 &amp; 2024</span>
+        <span><a href="https://www.linkedin.com/in/marsrobertson/">LinkedIn</a></span>
+        <span><a href="https://x.com/marsXrobertson">@marsXrobertson</a></span>
+      </div>
+    </div>
+    <div class="tweet rv">
+      <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><p lang="en" dir="ltr">Nice little interview from Davos 🗻❄️🇨🇭</p>&mdash; BaseX 🌱 (@basexHQ) <a href="https://twitter.com/basexHQ/status/1750826952015917178">January 26, 2024</a></blockquote>
+    </div>
+  </div>
+</section>
 
-				<p>Need to rethink the approach and figure out the next steps. Read more on the <a href="https://mirror.xyz/0x81e64EFA58bf79F1649F267E16451Fbf836071f6/WG27s2ZP3aeOR6dma2hFE0jQdERnwhTqiYO5Ilvvp7M">Mirror blog</a>. <strong>UPDATE:</strong> now we know <a href="https://impactevaluation.foundation">Impact Evaluation Foundation</a>.</p>
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="eyebrow rv">Roadmap</div>
+    <h2 class="rv">Early, honest, and shipping.</h2>
+    <p class="lede rv">We're building in public. Here is exactly where things stand.</p>
+    <div class="road">
+      <div class="col now rv"><h3>Now</h3><ul>
+        <li>Live clickable demo at <a href="https://demo.basex.com/">demo.basex.com</a></li>
+        <li>Working app: claims, sealed evaluations, consensus and challenges</li>
+        <li>Public demo code and data templates on GitHub</li>
+        <li>Whitepaper v0.1 and a public reference library</li>
+      </ul></div>
+      <div class="col next rv"><h3>Next</h3><ul>
+        <li>Identity and mutual verification for organisations and evaluators</li>
+        <li>Pilots with founding partners on their real data</li>
+        <li>Price history and outcomes tracking</li>
+        <li>AI-assisted claim structuring</li>
+      </ul></div>
+      <div class="col later rv"><h3>Later</h3><ul>
+        <li>Forecast settlement and evaluator rewards</li>
+        <li>AI-suggested estimates trained on consensus</li>
+        <li>On-chain attestations (EAS) and Karma GAP import</li>
+        <li>Public read API for funders and agents</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
 
-				<p>The domain <code>BaseX.com</code> is an asset that might be available <strong>FOR SALE</strong> 💰 💰 💰 <i>(make an offer)</i></p>
+<!-- CTA -->
+<div class="wrap">
+  <div class="cta rv">
+    <div class="eyebrow" style="color:#8FA0FF">Open for business</div>
+    <h2>Let's price what matters.</h2>
+    <p>Bring your data in any format and we'll shape it together, in public. Founding partners help define the standard.</p>
+    <div class="cta-row">
+      <a class="btn btn-light" href="https://calendly.com/marsxr/basex">Book a call →</a>
+      <a class="btn btn-outline-light" href="https://demo.basex.com/">Explore the demo</a>
+    </div>
+    <p class="mail">Or email <a href="mailto:info@basex.com">info@basex.com</a></p>
+  </div>
+</div>
 
-				<p>No contradiction in offering it for sale - possible to obtain liquidity and continue to solve the problem under a different name.</p>
-				
-				<p>Contact <a href="mailto:marsXRobertson@gmail.com">marsXRobertson@gmail.com</a> or book a call: <a href="https://calendly.com/marsxr/basex">calendly.com/marsxr/basex</a> ☎️</p>
+</main>
 
-				<p>Previous version of the website <a href="OLD">available here.</a></p>
-				-->
-			
-			
-			</header>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="images/basex-logo-640.png" alt="BaseX" width="86" height="28">
+        <p>We measure value. Price discovery for impact: open, permissionless and challengeable.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="https://demo.basex.com/">Live demo</a></li>
+          <li><a href="https://demo.basex.com/templates/">Data templates</a></li>
+          <li><a href="https://demo.basex.com/carbon-xprize.html">Carbon XPRIZE</a></li>
+          <li><a href="whitepaper.pdf">Whitepaper</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <ul>
+          <li><a href="https://planetarycouncil.org/">Planetary Council</a></li>
+          <li><a href="https://independenttribunal.org/">Independent Tribunal</a></li>
+          <li><a href="https://github.com/basexhq">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@basex.com">info@basex.com</a></li>
+          <li><a href="https://calendly.com/marsxr/basex">Book a call</a></li>
+          <li><a href="https://x.com/basexHQ">X / @basexHQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 BaseX. Part of Planetary Council.</span>
+      <span>SpaceX: making life multiplanetary. BaseX: making life multiplanetary, starting from the Earth.</span>
+    </div>
+  </div>
+</footer>
 
-			<br>
-			<br>
-			<br>
-
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="https://twitter.com/basexHQ" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="https://discord.gg/tBF7cGjzsS" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
-					<li><a href="https://github.com/basexHQ" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="mailto:marsXRobertson@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li><span class="copyleft">&copy;</span>BaseX</li>
-					<li>Design credits: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
-		</div>
-
-		<!-- Scripts -->
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>8)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})
+  },{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
 </html>
