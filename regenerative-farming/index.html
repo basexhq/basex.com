@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regenerative farming: measuring what it's worth | BaseX</title>
+<meta name="description" content="The 16 benefits of regenerative farming, each with a way to measure it and the price it has today. Some are already priced, some are measured, and some, like spiritual connection, still have no mechanism. BaseX is building one.">
+<link rel="canonical" href="https://basex.com/regenerative-farming/">
+<link rel="icon" href="../favicon.ico">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://basex.com/regenerative-farming/">
+<meta property="og:site_name" content="BaseX">
+<meta property="og:title" content="Regenerative farming: measuring what it's worth">
+<meta property="og:description" content="16 benefits, 16 measures. We quantify the value that is hardest to quantify, on purpose.">
+<meta property="og:image" content="https://basex.com/images/regenerative-farming-16-benefits.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@basexHQ">
+<meta name="twitter:title" content="Regenerative farming: measuring what it's worth">
+<meta name="twitter:description" content="16 benefits, 16 measures. We quantify the value that is hardest to quantify, on purpose.">
+<meta name="twitter:image" content="https://basex.com/images/regenerative-farming-16-benefits.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#0D1424; --ink-2:#334055; --muted:#667085; --line:#E4E7EE; --line-2:#D0D5DD;
+  --bg:#FFFFFF; --soft:#F6F7FB; --navy:#060B3A;
+  --blue:#1430FF; --blue-deep:#0A1AA8; --blue-tint:#EEF1FF;
+  --green:#12854A; --green-tint:#E8F6EE; --clay:#B4410E; --clay-tint:#FCEEE6;
+  --amber:#B45309; --amber-tint:#FDF3E3;
+  --r:14px; --max:1160px; --gut:clamp(16px,4vw,40px);
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:500}
+h1,h2,h3{letter-spacing:-.022em;line-height:1.12}
+h2{font-size:clamp(30px,4vw,44px);font-weight:800;margin:14px 0 16px}
+.lede{font-size:clamp(17px,1.6vw,19.5px);color:var(--ink-2);max-width:680px}
+.lede+.lede{margin-top:14px}
+section{padding:clamp(64px,8vw,104px) 0}
+.soft{background:var(--soft)}
+sup{font-size:.62em;line-height:0;margin-left:1px}
+sup a{color:var(--muted)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15.5px;padding:13px 22px;border-radius:10px;border:1px solid transparent;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 18px rgba(20,48,255,.28)}
+.btn-primary:hover{background:var(--blue-deep)}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--ink-2)}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-outline-light{color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-outline-light:hover{border-color:#fff}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(12px);-webkit-backdrop-filter:saturate(1.6) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.nav img{height:30px;width:auto}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:15px}
+.nav-links a{color:var(--ink-2);font-weight:500}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-links .btn{padding:9px 16px;font-size:14.5px;color:#fff}
+@media (max-width:860px){.nav-links a:not(.btn){display:none}}
+
+/* hero */
+.hero{padding:clamp(48px,7vw,96px) 0 clamp(56px,7vw,88px);background:
+  radial-gradient(900px 480px at 85% 10%,rgba(18,133,74,.08),transparent 65%),
+  radial-gradient(700px 420px at 5% 90%,rgba(20,48,255,.06),transparent 65%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(40px,6vw,72px);font-weight:800;letter-spacing:-.04em;margin:18px 0 20px}
+.hero h1 span{color:var(--green)}
+.hero .cta-row{margin-top:30px}
+.infographic{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 1px 2px rgba(16,24,40,.04),0 24px 60px -24px rgba(16,24,40,.22);background:#fff}
+.infographic a{display:block}
+.fig-note{font-size:12.5px;color:var(--muted);margin-top:12px;text-align:center}
+
+/* mission */
+.mission{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:start;margin-top:8px}
+.mission blockquote{font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.3}
+.mission blockquote span{color:var(--green)}
+.mission p{color:var(--ink-2)}
+.mission p+p{margin-top:14px}
+
+/* summary counts */
+.counts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.count{padding:24px;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+.count .num{font-size:clamp(34px,3.4vw,44px);font-weight:800;letter-spacing:-.03em}
+.count p{font-size:15px;color:var(--ink-2);margin-top:6px}
+.count.priced .num{color:var(--green)}
+.count.measured .num{color:var(--blue)}
+.count.gap .num{color:var(--clay)}
+
+/* measures table */
+.table-wrap{margin-top:36px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+thead th{background:var(--soft);text-align:left;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:12px 14px;border-bottom:1px solid var(--line)}
+tbody td{padding:14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr.group td{background:#FBFCFE;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:9px 14px}
+td.n{font-family:var(--mono);font-size:13px;color:var(--muted);width:44px}
+td.b{font-weight:700;color:var(--ink);width:19%}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:6px;font-weight:500;white-space:nowrap}
+.tag-ebf{background:var(--amber-tint);color:var(--amber)}
+.tag-none{background:var(--soft);color:var(--muted)}
+.st{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:13.5px;white-space:nowrap}
+.st::before{content:"";width:9px;height:9px;border-radius:50%}
+.st.priced{color:var(--green)}.st.priced::before{background:var(--green)}
+.st.measured{color:var(--blue)}.st.measured::before{background:var(--blue)}
+.st.gap{color:var(--clay)}.st.gap::before{background:var(--clay)}
+tr.highlight td{background:var(--clay-tint)}
+.table-note{font-size:13px;color:var(--muted);margin-top:14px;max-width:820px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.stat{padding:24px 22px;border:1px solid var(--line);border-radius:var(--r);background:#fff;display:flex;flex-direction:column}
+.stat .num{font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-.03em;color:var(--clay)}
+.stat .num.good{color:var(--green)}
+.stat p{font-size:15px;color:var(--ink-2);margin-top:10px;flex:1}
+.punch{margin-top:40px;font-size:clamp(19px,2vw,23px);font-weight:600;letter-spacing:-.01em;max-width:820px}
+.punch span{color:var(--blue)}
+
+/* unpriced */
+.unpriced{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.unpriced::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 400px at 90% 0%,rgba(18,133,74,.35),transparent 60%),radial-gradient(600px 400px at 0% 100%,rgba(20,48,255,.35),transparent 60%)}
+.unpriced .wrap{position:relative}
+.unpriced .eyebrow{color:#8FD9AE}
+.unpriced .lede{color:#C4CAE0}
+.unpriced sup a{color:#8FA0FF}
+.signals{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.signal{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:22px 20px}
+.signal .num{font-size:28px;font-weight:800;letter-spacing:-.02em}
+.signal p{font-size:14.5px;color:#C4CAE0;margin-top:8px;line-height:1.55}
+
+/* EBF */
+.ebf{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
+.six{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.six div{border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center;font-weight:700;background:#fff}
+.six div small{display:block;font-weight:500;font-size:12.5px;color:var(--muted);margin-top:2px}
+.six .beyond{grid-column:1/-1;background:var(--clay-tint);border-color:#F3CDB8;color:var(--clay)}
+
+/* CTA */
+.cta{background:var(--navy);color:#fff;border-radius:24px;padding:clamp(40px,6vw,72px);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% 0%,rgba(18,133,74,.5),transparent 70%)}
+.cta>*{position:relative}
+.cta h2{color:#fff}
+.cta p{color:#C4CAE0;max-width:620px;margin:0 auto 30px;font-size:18px}
+.cta .cta-row{justify-content:center}
+.cta .mail{margin:22px auto 0;font-size:14.5px;color:#C4CAE0}
+.cta .mail a{color:#fff;font-weight:600}
+
+/* sources */
+.sources{margin-top:clamp(64px,8vw,96px)}
+.sources h2{font-size:clamp(24px,3vw,30px)}
+.sources ol{margin-top:20px;padding-left:22px;display:grid;gap:8px;font-size:14px;color:var(--ink-2);columns:2;column-gap:40px;display:block}
+.sources li{margin-bottom:8px;break-inside:avoid}
+.sources li span{color:var(--muted)}
+
+/* footer */
+footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:clamp(72px,9vw,120px)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.foot img{height:28px;width:auto;margin-bottom:14px}
+.foot p{font-size:14px;color:var(--muted);max-width:300px}
+.foot h4{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px;font-weight:600}
+.foot ul{list-style:none;display:grid;gap:9px;font-size:14.5px}
+.foot ul a{color:var(--ink-2)}
+.legal{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:13px;color:var(--muted)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:1020px){
+  .stats,.signals{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .hero .wrap,.mission,.ebf{grid-template-columns:1fr}
+  .sources ol{columns:1}
+  /* the table becomes one card per benefit */
+  table,thead,tbody,tr,td{display:block}
+  thead{display:none}
+  tbody tr{padding:14px 16px;border-bottom:1px solid var(--line)}
+  tbody tr.group{padding:0}
+  tbody td{border:0;padding:3px 0}
+  td.n{display:inline-block;width:auto;margin-right:8px}
+  td.b{display:inline;width:auto;font-size:16px}
+  td[data-k]::before{content:attr(data-k);display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .counts,.stats,.signals{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+  .nav-links .btn{width:auto}
+  .six{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="/" aria-label="BaseX home"><img src="../images/basex-logo-640.png" alt="BaseX" width="92" height="30"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#measures">16 measures</a>
+      <a href="#invoice">Hidden invoice</a>
+      <a href="#unpriced">Not yet priced</a>
+      <a href="#ebf">EBF</a>
+      <a class="btn btn-primary" href="https://demo.basex.com/">Live demo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Regenerative farming</div>
+      <h1>The value of <span>living soil,</span> measured.</h1>
+      <p class="lede">Regenerative farming is known for 16 benefits, from healthy soils to spiritual connection. Some already have a price, many are measured but unpriced, and a few have no mechanism at all. We put a number next to every one of them, starting here.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#measures">See the 16 measures ↓</a>
+        <a class="btn btn-ghost" href="https://demo.basex.com/">Try the live demo</a>
+      </div>
+    </div>
+    <div>
+      <div class="infographic">
+        <a href="../images/regenerative-farming-16-benefits.webp"><img src="../images/regenerative-farming-16-benefits.webp" alt="Infographic: 16 benefits of regenerative farming. In the ground: healthy soils, erosion control, healthy water cycles, biodiversity recovery. On the farm: lower input costs, better livestock welfare, climate resilience, nutrient-dense food. In the community: physical and mental wellbeing, local jobs and income, education and skills, stronger communities. For the planet and the future: carbon sequestration, cleaner air, spiritual connection, thriving future generations." width="1024" height="1280"></a>
+      </div>
+      <p class="fig-note">The 16 benefits, as the regenerative movement tells it. Tap to enlarge.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="soft" id="why">
+  <div class="wrap">
+    <div class="eyebrow rv">Why we're doing this</div>
+    <div class="mission">
+      <blockquote class="rv">Leaders in technology are not always leaders on nature. <span>So we measure what is hardest to measure, on purpose.</span></blockquote>
+      <div class="rv">
+        <p>Many of the people shaping the future live in New York, San Francisco and London. City life keeps most of us far from the soil that feeds us, and what we don't see, we don't value.</p>
+        <p>That's why BaseX makes it a mission: whenever impact is hard to quantify, we quantify it deliberately. The gap is rarely a lack of value. It's a lack of a mechanism to measure and price it. Regenerative farming is where we start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 MEASURES -->
+<section id="measures">
+  <div class="wrap">
+    <div class="eyebrow rv">From benefits to measures</div>
+    <h2 class="rv">16 benefits, 16 measures.</h2>
+    <p class="lede rv">Every benefit on the infographic can be measured. Here is how, the price or value it carries today, and where it fits the six domains of the Ecological Benefits Framework (EBF)<sup><a href="#src-22">22</a></sup>.</p>
+
+    <div class="counts">
+      <div class="count priced rv"><div class="num">8</div><p>already have a price somewhere in the economy, usually the cost of the damage</p></div>
+      <div class="count measured rv"><div class="num">5</div><p>are measured, but nobody pays for them yet</p></div>
+      <div class="count gap rv"><div class="num">3</div><p>have no mechanism to measure or price them yet</p></div>
+    </div>
+
+    <div class="table-wrap rv">
+      <table>
+        <thead><tr><th>#</th><th>Benefit</th><th>How to measure it</th><th>Price or value today</th><th>EBF</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr class="group"><td colspan="6">In the ground</td></tr>
+          <tr><td class="n">01</td><td class="b">Healthy soils</td><td data-k="How to measure">Soil organic matter %, soil biology tests</td><td data-k="Price today">Soil degradation costs £1.2B a year in England and Wales<sup><a href="#src-1">1</a></sup></td><td data-k="EBF"><span class="tag tag-ebf">Soil</span></td><td data-k="Status"><span class="st priced">Priced</span></td></tr>
+          <tr><td class="n">02</td><td class="b">Erosion control</td><td data-k="How to measure">Tonnes of soil lost per hectare</td><td data-k="Price today">Part of that £1.2B<sup><a href="#src-1">1</a></sup>. US Corn Belt topsoil loss: about $2.8B a year<sup><a href="#src-2">2</a></sup></td><td data-k="EBF"><span class="tag tag-ebf">Soil</span></td><td data-k="Status"><span class="st priced">Priced</span></td></tr>
+          <tr><td class="n">03</td><td class="b">Healthy water cycles</td><td data-k="How to measure">Infiltration rate; nitrate in drainage water</td><td data-k="Price today">Priced through the damage: Lough Neagh water cost about £28M to treat in 2022–23<sup><a href="#src-3">3</a></sup></td><td data-k="EBF"><span class="tag tag-ebf">Water</span></td><td data-k="Status"><span class="st priced">Priced</span></td></tr>
+          <tr><td class="n">04</td><td class="b">Biodiversity recovery</td><td data-k="How to measure">Biodiversity units, Defra statutory metric</td><td data-k="Price today">Statutory biodiversity credits start at £42,000 each<sup><a href="#src-4">4</a></sup></td><td data-k="EBF"><span class="tag tag-ebf">Biodiversity</span></td><td data-k="Status"><span class="st priced">Priced</span></td></tr>
+          <tr class="group"><td colspan="6">On the farm</td></tr>
+          <tr><td class="n">05</td><td class="b">Lower input costs</td><td data-k="How to measure">Spend per hectare on fertiliser, sprays and fuel</td><td data-k="Price today">Fertiliser: £407/ha on feed wheat<sup><a href="#src-5">5</a></sup>. Modelled regenerative margin 31% above conventional by year six<sup><a href="#src-18">18</a></sup></td><td data-k="EBF"><span class="tag tag-none">Beyond EBF</span></td><td data-k="Status"><span class="st priced">Priced</span></td></tr>
+          <tr><td class="n">06</td><td class="b">Better livestock welfare</td><td data-k="How to measure">Antibiotic use, mg per kg of animal</td><td data-k="Price today">UK food-producing animals: 15.6 mg/kg in 2024<sup><a href="#src-6">6</a></sup>. No price</td><td data-k="EBF"><span class="tag tag-none">Beyond EBF</span></td><td data-k="Status"><span class="st measured">Measured</span></td></tr>
+          <tr><td class="n">07</td><td class="b">Climate resilience</td><td data-k="How to measure">Yield lost in drought and flood years</td><td data-k="Price today">Up to 50% smaller losses in bad years, modelled for Germany<sup><a href="#src-7">7</a></sup></td><td data-k="EBF"><span class="tag tag-none">Beyond EBF</span></td><td data-k="Status"><span class="st measured">Measured</span></td></tr>
+          <tr><td class="n">08</td><td class="b">Nutrient-dense food</td><td data-k="How to measure">Vitamins, minerals and phytochemicals per crop</td><td data-k="Price today">Early evidence only, from 8 farm pairs<sup><a href="#src-8">8</a></sup></td><td data-k="EBF"><span class="tag tag-none">Beyond EBF</span></td><td data-k="Status"><span class="st gap">No mechanism yet</span></td></tr>
+          <tr class="group"><td colspan="6">In the community</td></tr>
+          <tr><td class="n">09</td><td class="b">Physical &amp; mental wellbeing</td><td data-k="How to measure">ONS life satisfaction score, 0–10</td><td data-k="Price today">HM Treasury values 1 point, for 1 person, for 1 year at £13,000 (a WELLBY)<sup><a href="#src-9">9</a></sup>. Not yet applied to farms</td><td data-k="EBF"><span class="tag tag-none">Beyond EBF</span></td><td data-k="Status"><span class="st measured">Measured</span></td></tr>
+          <tr><td class="n">10</td><td class="b">Local jobs &amp; income</td><td data-k="How to measure">Jobs and local spend per 100 hectares</td><td data-k="Price today">No standard price found</td><td data-k="EBF"><span class="tag tag-ebf">Equity</span></td><td data-k="Status"><span class="st measured">Measured</span></td></tr>
+          <tr><td class="n">11</td><td class="b">Education &amp; skills</td><td data-k="How to measure">Participants and hours of learning</td><td data-k="Price today">No standard price found</td><td data-k="EBF"><span class="tag tag-ebf">Equity</span></td><td data-k="Status"><span class="st measured">Measured</span></td></tr>
+          <tr><td class="n">12</td><td class="b">Stronger communities</td><td data-k="How to measure">Trust and belonging surveys</td><td data-k="Price today">No agreed measure or price</td><td data-k="EBF"><span class="tag tag-ebf">Equity</span></td><td data-k="Status"><span class="st gap">No mechanism yet</span></td></tr>
+          <tr class="group"><td colspan="6">For the planet and the future</td></tr>
+          <tr><td class="n">13</td><td class="b">Carbon sequestration</td><td data-k="How to measure">Soil carbon in tonnes CO₂e per hectare, sampled to depth</td><td data-k="Price today">UK woodland carbon valued at £131.5B<sup><a href="#src-10">10</a></sup>. Soil carbon gains are still contested<sup><a href="#src-11">11</a></sup></td><td data-k="EBF"><span class="tag tag-ebf">Carbon</span></td><td data-k="Status"><span class="st priced">Priced</span></td></tr>
+          <tr><td class="n">14</td><td class="b">Cleaner air</td><td data-k="How to measure">Ammonia emitted, kg per hectare</td><td data-k="Price today">Ammonia damage: £9,667 per tonne<sup><a href="#src-12">12</a></sup>. Farms emit 88.7% of UK ammonia<sup><a href="#src-13">13</a></sup></td><td data-k="EBF"><span class="tag tag-ebf">Air</span></td><td data-k="Status"><span class="st priced">Priced</span></td></tr>
+          <tr class="highlight"><td class="n">15</td><td class="b">Spiritual connection</td><td data-k="How to measure">Nature Connection Index<sup><a href="#src-15">15</a></sup>; ONS "life worthwhile" score</td><td data-k="Price today">Highly connected people are 1.7× likelier to say life is worthwhile<sup><a href="#src-14">14</a></sup>. No price yet</td><td data-k="EBF"><span class="tag tag-none">Beyond EBF</span></td><td data-k="Status"><span class="st gap">No mechanism yet</span></td></tr>
+          <tr><td class="n">16</td><td class="b">Thriving future generations</td><td data-k="How to measure">Natural capital accounts: the value of land as an asset</td><td data-k="Price today">ONS values UK woodland at £351.4B<sup><a href="#src-10">10</a></sup>. Farmland is not yet valued this way</td><td data-k="EBF"><span class="tag tag-none">Beyond EBF</span></td><td data-k="Status"><span class="st priced">Priced</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note rv">Prices come from different schemes, years and methods, so they can't be added together. Where a price exists, it is usually the cost of the damage, not the value of the benefit. The EBF mapping is ours.</p>
+  </div>
+</section>
+
+<!-- HIDDEN INVOICE -->
+<section class="soft" id="invoice">
+  <div class="wrap">
+    <div class="eyebrow rv">The counter-example</div>
+    <h2 class="rv">The old system sends two invoices.</h2>
+    <p class="lede rv">The farmer pays the first: fertiliser, sprays and fuel. Everyone else pays the second, through water bills, lost soil and dirty air. It never appears on the farm's books.</p>
+    <div class="stats">
+      <div class="stat rv"><div class="num">£1.2B<small style="font-size:.5em">/yr</small></div><p>Cost of soil degradation in England and Wales. 80% of it falls off the farm.<sup><a href="#src-1">1</a></sup></p></div>
+      <div class="stat rv"><div class="num">14.3%</div><p>Of England's surface waters reach good ecological status. Farm nutrients are one of the named pressures.<sup><a href="#src-16">16</a></sup></p></div>
+      <div class="stat rv"><div class="num">61%</div><p>Of the phosphorus feeding Lough Neagh's algae comes from farming. The lough supplies 40%+ of Northern Ireland's drinking water.<sup><a href="#src-17">17</a>,<a href="#src-3">3</a></sup></p></div>
+      <div class="stat rv"><div class="num good">+31%</div><p>Modelled regenerative arable margin over conventional by year six, after a weaker start.<sup><a href="#src-18">18</a></sup></p></div>
+    </div>
+    <p class="punch rv">The switch costs money up front: in the same model, food margin starts 64% below conventional before support payments<sup><a href="#src-18">18</a></sup>. <span>A credible price on the benefits is what funds the bridge.</span></p>
+  </div>
+</section>
+
+<!-- NOT YET PRICED -->
+<section class="unpriced" id="unpriced">
+  <div class="wrap">
+    <div class="eyebrow rv">Valuable, but not yet priced</div>
+    <h2 class="rv">Wonder, reverence, connection with the divine.</h2>
+    <p class="lede rv">These are real reasons people farm and protect land. The value is real. What's missing is a mechanism to measure and price it, and that is exactly the problem BaseX exists to solve.</p>
+    <p class="lede rv">Part of the mechanism already exists. The UK Treasury puts £13,000 on one point of life satisfaction, for one person, for one year<sup><a href="#src-9">9</a></sup>. The rest we build in the open, with the people who do the work.</p>
+    <div class="signals">
+      <div class="signal rv"><div class="num">36%</div><p>Of the farming community in England and Wales are probably or possibly depressed.<sup><a href="#src-19">19</a></sup></p></div>
+      <div class="signal rv"><div class="num">Higher</div><p>Wellbeing among regenerative farmers in Australian surveys: a small but significant gap. Early evidence.<sup><a href="#src-20">20</a>,<a href="#src-21">21</a></sup></p></div>
+      <div class="signal rv"><div class="num">1.7×</div><p>More likely to say life is worthwhile, for people highly connected to nature in England.<sup><a href="#src-14">14</a></sup></p></div>
+      <div class="signal rv"><div class="num">£13,000</div><p>Per WELLBY: the Treasury's value for one point of life satisfaction for one year.<sup><a href="#src-9">9</a></sup></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EBF -->
+<section id="ebf">
+  <div class="wrap ebf">
+    <div>
+      <div class="eyebrow rv">Built on a shared language</div>
+      <h2 class="rv">EBF names six benefits. We go further.</h2>
+      <p class="lede rv">The Ecological Benefits Framework, a program of The Lexicon, describes impact across six domains: Air, Water, Soil, Biodiversity, Equity and Carbon<sup><a href="#src-22">22</a></sup>. BaseX already uses these as claim tags, so regenerative claims stay comparable.</p>
+      <p class="lede rv">Seven of the 16 benefits fall outside those six, including welfare, nutrition, wellbeing and spiritual connection. We price those too.</p>
+    </div>
+    <div class="six rv" aria-label="The six EBF domains">
+      <div>Air<small>Benefit 14</small></div>
+      <div>Water<small>Benefit 3</small></div>
+      <div>Soil<small>Benefits 1–2</small></div>
+      <div>Biodiversity<small>Benefit 4</small></div>
+      <div>Equity<small>Benefits 10–12</small></div>
+      <div>Carbon<small>Benefit 13</small></div>
+      <div class="beyond">Beyond EBF<small style="color:var(--clay)">Benefits 5–9, 15, 16</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="wrap">
+  <div class="cta rv">
+    <div class="eyebrow" style="color:#8FD9AE">For farmers, funders and buyers</div>
+    <h2>Let's price the whole farm.</h2>
+    <p>Bring a regenerative project and its data in any format. We'll turn each benefit into a claim, have it priced by independent evaluators, and keep every number open to challenge.</p>
+    <div class="cta-row">
+      <a class="btn btn-light" href="https://calendly.com/marsxr/basex">Book a call →</a>
+      <a class="btn btn-outline-light" href="https://demo.basex.com/">Explore the demo</a>
+    </div>
+    <p class="mail">Or email <a href="mailto:info@basex.com?subject=Regenerative%20farming">info@basex.com</a></p>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="wrap sources" id="sources">
+  <div class="eyebrow">Sources</div>
+  <h2>Every number, with its source.</h2>
+  <ol>
+    <li id="src-1"><a href="https://ideas.repec.org/a/eee/ecolec/v119y2015icp399-413.html">Graves et al. (2015), The total costs of soil degradation in England and Wales</a> <span>Ecological Economics · peer-reviewed</span></li>
+    <li id="src-2"><a href="https://www.umass.edu/news/article/corn-belt-farmland-has-lost-third-its">UMass Amherst (2021), summary of Thaler et al., PNAS</a> <span>University summary</span></li>
+    <li id="src-3"><a href="https://www.aljazeera.com/news/2023/11/6/why-is-lough-neagh-the-uks-largest-freshwater-lake-turning-green">Al Jazeera (2023), Worst-ever contamination of Ireland's largest lake</a> <span>News</span></li>
+    <li id="src-4"><a href="https://www.gov.uk/guidance/statutory-biodiversity-credit-prices">GOV.UK, Statutory biodiversity credit prices</a> <span>Official</span></li>
+    <li id="src-5"><a href="https://ahdb.org.uk/news/analyst-insight-will-wheat-still-lead-for-harvest-2027-gross-margins">AHDB (2026), Indicative gross margins for harvest 2027</a> <span>Industry body · estimate</span></li>
+    <li id="src-6"><a href="https://www.gov.uk/government/publications/veterinary-antimicrobial-resistance-and-sales-surveillance-2024/uk-varss-2024-highlights">Veterinary Medicines Directorate, UK-VARSS 2024 highlights</a> <span>Official</span></li>
+    <li id="src-7"><a href="https://www.bcg.com/publications/2023/regenerative-agriculture-benefits-germany-beyond">BCG &amp; NABU (2023), The case for regenerative agriculture in Germany and beyond</a> <span>Consultancy · modelled</span></li>
+    <li id="src-8"><a href="https://peerj.com/articles/12848">Montgomery et al. (2022), Soil health and nutrient density</a> <span>PeerJ · peer-reviewed, preliminary</span></li>
+    <li id="src-9"><a href="https://assets.publishing.service.gov.uk/media/60fa9169d3bf7f0448719daf/Wellbeing_guidance_for_appraisal_-_supplementary_Green_Book_guidance.pdf">HM Treasury (2021), Wellbeing guidance for appraisal</a> <span>Official · 2019 prices, range £10,000–16,000</span></li>
+    <li id="src-10"><a href="https://www.ons.gov.uk/economy/environmentalaccounts/bulletins/woodlandnaturalcapitalaccountsuk/2022">ONS (2022), Woodland natural capital accounts, UK</a> <span>Official</span></li>
+    <li id="src-11"><a href="https://carbondioxide-removal.eu/2023/05/23/prairie-et-al-2023-restoring-particulate-and-mineral-associated-organic-carbon-through-regenerative-agriculture/">Prairie, King &amp; Cotrufo (2023), PNAS, via summary</a> <span>Peer-reviewed</span></li>
+    <li id="src-12"><a href="https://uk-air.defra.gov.uk/assets/documents/reports/cat09/2301090900_Damage_cost_update_2023_Final.pdf">Defra (2023), Air quality damage cost update</a> <span>Official · 2022 prices</span></li>
+    <li id="src-13"><a href="https://naei.energysecurity.gov.uk/sites/default/files/2026-08/UK_Agriculture_Ammonia_Emission_Report_1990-2024_08.07.2026.pdf">NAEI (2026), UK Agriculture Ammonia Emission Report 1990–2024</a> <span>Official</span></li>
+    <li id="src-14"><a href="https://publications.naturalengland.org.uk/file/5909933893877760">Natural England, nature connectedness and wellbeing (MENE)</a> <span>Official</span></li>
+    <li id="src-15"><a href="https://www.mdpi.com/2071-1050/11/12/3250/htm">Richardson et al. (2019), A measure of nature connectedness</a> <span>Sustainability · peer-reviewed</span></li>
+    <li id="src-16"><a href="https://envirotecmagazine.com/2026/08/11/just-14-of-englands-surface-waters-achieve-good-ecological-status-latest-ea-figures/">Envirotec (2026), reporting Environment Agency classifications</a> <span>Trade press</span></li>
+    <li id="src-17"><a href="https://factcheckni.org/articles/lough-neagh-crisis-does-most-of-the-phosphorus-in-the-lough-come-from-agriculture/">FactCheckNI, Lough Neagh phosphorus</a> <span>Fact-checker · NEW Harmonica model</span></li>
+    <li id="src-18"><a href="https://www.savills.co.uk/research_articles/229130/362979-0">Savills (2024), Can farmers afford to switch to regenerative farming?</a> <span>Consultancy · modelled farm</span></li>
+    <li id="src-19"><a href="https://rabi.org.uk/about/big-farming-survey/">RABI (2021), The Big Farming Survey</a> <span>Charity survey · 15,000+ respondents</span></li>
+    <li id="src-20"><a href="https://researchprofiles.canberra.edu.au/en/studentTheses/regenerative-agriculture-and-farmer-wellbeing-2/">University of Canberra, Regenerative agriculture and farmer wellbeing</a> <span>Doctoral thesis</span></li>
+    <li id="src-21"><a href="https://link.springer.com/article/10.1007/s10460-025-10771-8">Agriculture and Human Values (2025), rapid review</a> <span>Peer-reviewed · finds evidence still scarce</span></li>
+    <li id="src-22"><a href="https://ebfcommons.org/">EBF Commons, Ecological Benefits Framework</a> <span>The Lexicon</span></li>
+  </ol>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="../images/basex-logo-640.png" alt="BaseX" width="86" height="28">
+        <p>We measure value. Price discovery for impact: open, permissionless and challengeable.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="https://demo.basex.com/">Live demo</a></li>
+          <li><a href="https://demo.basex.com/templates/">Data templates</a></li>
+          <li><a href="/regenerative-farming/">Regenerative farming</a></li>
+          <li><a href="../whitepaper.pdf">Whitepaper</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <ul>
+          <li><a href="https://planetarycouncil.org/">Planetary Council</a></li>
+          <li><a href="https://independenttribunal.org/">Independent Tribunal</a></li>
+          <li><a href="https://ebfcommons.org/">EBF Commons</a></li>
+          <li><a href="https://github.com/basexhq">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@basex.com">info@basex.com</a></li>
+          <li><a href="https://calendly.com/marsxr/basex">Book a call</a></li>
+          <li><a href="https://x.com/basexHQ">X / @basexHQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 BaseX. Part of Planetary Council.</span>
+      <span>SpaceX: making life multiplanetary. BaseX: making life multiplanetary, starting from the Earth.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>8)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})
+  },{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
